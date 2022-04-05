@@ -28,11 +28,16 @@ git clone https://github.com/NVIDIA-AI-IOT/deepstream_python_apps.git
 cd deepstream_python_apps/apps/deepstream-test3/
 python3 deepstream_test_3.py file:///opt/nvidia/deepstream/deepstream-5.1/samples/streams/sample_1080p_h264.mp4
 ```
-If above all commands are executing, then your deepstream docker image is set correctly.
+If above all commands are successfully executed, then your deepstream docker image is set correctly.
 
 
 ### 3. Setting up the code
-Copy the `deepstream_imgdata_with_bboxes.py` or `deepstream_imgdata_without_bbox.py` in your `deepstream-imagedata-multistream` folder.
+Clone the repository by the following command
+```sh
+git clone https://github.com/chinmay-d/Deepstream-Auto-Annotation-Tool.git
+```
+
+Copy the `deepstream_imgdata_with_bboxes.py` and `deepstream_imgdata_without_bbox.py` in your `deepstream-imagedata-multistream` folder.
 
 `deepstream_imgdata_with_bboxes.py` : outputs images which have bounding boxes on them with the XML file for that corresponding image. 
 
@@ -41,7 +46,7 @@ Copy the `deepstream_imgdata_with_bboxes.py` or `deepstream_imgdata_without_bbox
 `cd` to `deepstream-imagedata-multistream` folder will be present on this path `/opt/nvidia/deepstream/deepstream-5.1/sources/deepstream_python_apps/apps/deepstream-imagedata-multistream/` if you follow step 2 without errors.
 
 
-### 4. Run this command
+### 4. Run the following script to auto annotate
 This command runs `deepstream_imgdata_without_bbox.py` and will make a folder named `deepstream_imgdata_without_bbox/stream_0` which will contain images with its xml just like shown below. 
 ```sh
 python3 deepstream_imgdata_without_bbox.py file:///opt/nvidia/deepstream/deepstream-5.1/samples/streams/sample_1080p_h264.mp4 deepstream_imgdata_without_bbox
