@@ -182,9 +182,8 @@ def tiler_sink_pad_buffer_probe(pad, info, u_data):
     return Gst.PadProbeReturn.OK
 
 def auto_annotate(n_frame, top, left, width, height, label, img_path, folder_name):
-    # def_path = '/home/diycam/deepstream-5.1/sources/deepstream_python_apps/apps/deepstream-imagedata-multistream/'
-    # def_path = input("gdef_pathive deepstream-imagedata-multistream path from deepstream in your device: ")
-     = '/opt/nvidia/deepstream/deepstream-5.1/sources/deepstream_python_apps/apps/deepstream-imagedata-multistream/'
+    def_path = input("give deepstream-imagedata-multistream path from deepstream in your device: ")
+    # def_path = ' add path to your deepstream-imagedata-multistream folder here and comment the above line'
     full_path = def_path+img_path
     list_path = full_path.split('/')
     folder = list_path[-2]
@@ -234,13 +233,7 @@ def auto_annotate(n_frame, top, left, width, height, label, img_path, folder_nam
 
 def draw_bounding_boxes(image, top, left, width, height, label, confidence):
     confidence = '{0:.2f}'.format(confidence)
-    # rect_params = obj_meta.rect_params
-    # top = int(rect_params.top)
-    # left = int(rect_params.left)
-    # width = int(rect_params.width)
-    # height = int(rect_params.height)
-    # obj_name = pgie_classes_str[obj_meta.class_id]
-    # image = cv2.rectangle(image, (left, top), (left + width, top + height), (0, 0, 255, 0), 2, cv2.LINE_4)
+
     color = (0, 0, 255, 0)
     w_percents = int(width * 0.05) if width > 100 else int(width * 0.1)
     h_percents = int(height * 0.05) if height > 100 else int(height * 0.1)
@@ -256,7 +249,7 @@ def draw_bounding_boxes(image, top, left, width, height, label, confidence):
     lineright_c1 = (left + width, top + h_percents)
     lineright_c2 = (left + width, top + height - h_percents)
     image = cv2.line(image, lineright_c1, lineright_c2, color, 6)
-    # cv2.rectangle(image, (left, top), (left+width, top+height), color, 0.5)
+
     # Note that on some systems cv2.putText erroneously draws horizontal lines across the image
     image = cv2.putText(image, label + ',C=' + str(confidence), (left - 10, top - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5,
                         (0, 0, 255, 0), 2)
