@@ -50,3 +50,6 @@ python3 deepstream_imgdata_without_bbox.py file:///opt/nvidia/deepstream/deepstr
 <p>
     <img src='media/img_w_xml.png' width='640'>
 </p>
+
+
+**NOTE**: This img and xml file are used to make a larger dataset which will be further trained to increase accuracy and reduce time in manual annotating the objects in the dataset. 
