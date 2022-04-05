@@ -52,7 +52,7 @@ python3 deepstream_imgdata_without_bbox.py file:///opt/nvidia/deepstream/deepstr
 </p>
 
 
-**NOTE**: This img and xml file are used to make a larger dataset which will be further trained to increase accuracy and reduce time in manual annotating the objects in the dataset.
+**NOTE**: This img and xml file are used to make a larger dataset which will be further trained to increase accuracy and reduce time in manual annotating the objects in the dataset. Making of this folder which has image and the xml file corresponding to it <b> IS THE MAIN GOAL</b> of this project.  
 
 ## License
 This project is totally free to use, although credit would be appreciated in case of any reuse of the work.
